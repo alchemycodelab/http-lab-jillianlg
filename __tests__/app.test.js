@@ -16,5 +16,13 @@ describe('app routes', () => {
     expect(res.text).toEqual('hi');
   });
 
+  it('should return HTML with word red', async() => {
+    const res = await request(app)
+      .get('/red');
+    expect(res.text).toEqual('<h1>red</h1>');
+  });
+
+  
+
 });
 

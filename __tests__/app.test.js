@@ -34,5 +34,12 @@ describe('app routes', () => {
     expect(res.text).toEqual('<h1>blue</h1>');
   });
 
+  it('respond with Not Found for endpoints that do not exist', async() => {
+    const response = await request(app)
+      .get('/falseendpoint');
+
+    expect(response.text).toEqual('Not Found');
+  });
+
 });
 
